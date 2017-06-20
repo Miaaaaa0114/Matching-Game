@@ -11,9 +11,29 @@ library(markdown)
 library(shinyDND)
 navbarPage("Histogram & Boxplot",
            tabPanel("Direction",
-                    h1("Matching Game of Histigram and Boxplot"),
-                    h3("Welcome to matching game. will be written later"),
-                    actionButton("go","Go!")
+                    h1("        Matching Game of distribution & application"),
+                    hr(),
+                    hr(),
+                    h3("Welcome to matching game. Instruction will be written later"),
+                    hr(),
+                    hr(),
+                    hr(),
+                    fluidRow(
+                      column (5,
+                              textOutput("text")
+                              
+                      ),
+                      column(4,
+                             actionButton("go","Go!"),
+                             tags$head(
+                               tags$style(HTML('#go{background-color:orange}')))
+                      ),
+                      column(5,
+                             textOutput("text3")
+                             
+                      )
+                    )
+                    #actionButton("go","Go!")
            ),
            
            tabPanel("Level 1",
@@ -27,9 +47,7 @@ navbarPage("Histogram & Boxplot",
                           textOutput("timer2")),
                         column(2,
                           htmlOutput("timer1"),
-                          tags$head(tags$style("#time1{
-                                           font-size: 20px
-                                               }"))
+                          tags$head(tags$style(HTML('#timer1{background-color:orange;  font-size: 20px}')))
                         )
                       ),
                       fluidRow(
@@ -121,9 +139,15 @@ navbarPage("Histogram & Boxplot",
                       fluidRow(
                         column(8,
                                sidebarPanel(actionButton("h", "Submit Answer")),
-                               mainPanel("Answer:", verbatimTextOutput("answer1"))),
+                               mainPanel("Answer:", verbatimTextOutput("answer1"),
+                                         tags$head(tags$style("#answer1{
+                                           font-size: 20px;
+                                                              font-style: italic}")))),
                         column(4,
-                               mainPanel("Points:", verbatimTextOutput("points1")))
+                               mainPanel("Points:", verbatimTextOutput("points1"),
+                                         tags$head(tags$style("#points1{
+                                           font-size: 20px; color: red;
+                                                              font-style: italic}"))))
                       )
                     ) ),
            tabPanel("Level 2",
@@ -202,10 +226,16 @@ navbarPage("Histogram & Boxplot",
                       fluidRow(
                         column(3,
                                wellPanel(
-                                 htmlOutput('out5', style = "margin-left:50%"))),
+                                 htmlOutput('out5', style = "margin-left:50%"),
+                                 tags$head(tags$style("#out5{
+                                           font-size: 20px;
+                                                      font-style: italic}")))),
                         column(3,
                                wellPanel(
-                                 htmlOutput('out6', style = "margin-left:50%"))),
+                                 htmlOutput('out6', style = "margin-left:50%"),
+                                 tags$head(tags$style("#out6 {
+                                           font-size: 20px;
+                                                      font-style: italic}")))),
                         column(3,
                                wellPanel(
                                  htmlOutput('out7', style = "margin-left:50%"))),
@@ -216,7 +246,10 @@ navbarPage("Histogram & Boxplot",
                       fluidRow(
                         column(8,
                                sidebarPanel(actionButton("hh", "Submit Answer")),
-                               mainPanel("Answer:", verbatimTextOutput("answer2"))),
+                               mainPanel("Answer:", verbatimTextOutput("answer2"),
+                                         tags$head(tags$style("#answer2{
+                                           font-size: 20px;
+                                                              font-style: italic}")))),
                         column(4,
                                mainPanel("Points:", verbatimTextOutput("points2")))
                       )
@@ -312,7 +345,10 @@ navbarPage("Histogram & Boxplot",
                       fluidRow(
                         column(8,
                                sidebarPanel(actionButton("hhh", "Submit Answer")),
-                               mainPanel("Answer:", verbatimTextOutput("answer3"))),
+                               mainPanel("Answer:", verbatimTextOutput("answer3"),
+                                         tags$head(tags$style("#answer1{
+                                           font-size: 20px;
+                                                              font-style: italic}")))),
                         column(4,
                                mainPanel("Points:", verbatimTextOutput("points3")))
                       )
@@ -408,7 +444,10 @@ navbarPage("Histogram & Boxplot",
                       fluidRow(
                         column(8,
                                sidebarPanel(actionButton("hhhh", "Submit Answer")),
-                               mainPanel("Answer:", verbatimTextOutput("answer4"))),
+                               mainPanel("Answer:", verbatimTextOutput("answer4"),
+                                         tags$head(tags$style("#answer1{
+                                           font-size: 20px;
+                                                              font-style: italic}")))),
                         column(4,
                                mainPanel("Points:", verbatimTextOutput("points4")))
                       )
@@ -504,7 +543,10 @@ navbarPage("Histogram & Boxplot",
                       fluidRow(
                         column(8,
                                sidebarPanel(actionButton("hhhhh", "Submit Answer")),
-                               mainPanel("Answer:", verbatimTextOutput("answer5"))),
+                               mainPanel("Answer:", verbatimTextOutput("answer5"),
+                                         tags$head(tags$style("#answer5{
+                                           font-size: 20px;
+                                                              font-style: italic}")))),
                         column(4,
                                fluidPage(
                                  mainPanel("Points:", verbatimTextOutput("points5")),
@@ -525,3 +567,4 @@ navbarPage("Histogram & Boxplot",
                     )
                       
                     ))
+)
